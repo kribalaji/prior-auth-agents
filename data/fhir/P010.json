@@ -1,0 +1,87 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P010",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100010"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55010"
+          }
+        ],
+        "name": [
+          {
+            "family": "Begum",
+            "given": [
+              "Fathima"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1979-08-25",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00010"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P010-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M05.79",
+              "display": "Rheumatoid arthritis with rheumatoid factor, multiple sites"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P010"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "P010-med-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Methotrexate 20 mg weekly"
+        },
+        "effectivePeriod": {
+          "start": "2026-06-04",
+          "end": "2026-11-01"
+        },
+        "subject": {
+          "reference": "Patient/P010"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P004",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100004"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55004"
+          }
+        ],
+        "name": [
+          {
+            "family": "Nair",
+            "given": [
+              "Lakshmi"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1971-07-30",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00004"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P004-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11.9",
+              "display": "Type 2 diabetes mellitus without complications"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P004"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "P004-obs-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 7.6,
+          "unit": "%"
+        },
+        "effectiveDateTime": "2026-10-12",
+        "subject": {
+          "reference": "Patient/P004"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "P004-alg-3",
+        "code": {
+          "text": "Metformin"
+        },
+        "reaction": [
+          {
+            "description": "Severe gastrointestinal intolerance"
+          }
+        ],
+        "patient": {
+          "reference": "Patient/P004"
+        },
+        "subject": {
+          "reference": "Patient/P004"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+# Larkspur Health Plan: prior-authorization policies.
+#
+# ILLUSTRATIVE ONLY. Larkspur Health Plan is fictional, and these criteria were
+# written to exercise the software. They are not clinical guidance and do not
+# reproduce any real payer's medical policy.
+#
+# Criterion types understood by priorauth.rules:
+#   diagnosis            any active Condition whose ICD-10 code starts with a listed prefix
+#   observation          latest Observation (LOINC) within `within_days` compared with `op value`
+#   medication_duration  MedicationStatement for `ingredient` lasting >= min_days
+#   procedure_span       Procedure `code` sessions spanning >= min_days within `within_days`
+#   allergy              AllergyIntolerance to `substance` (documented intolerance)
+#   any_of               at least one nested criterion met
+# `bypass` criteria, when met, approve without the remaining criteria (e.g. red flags).
+
+as_of: "2026-11-01"
+
+policies:
+  - id: GLP1-T2D
+    title: GLP-1 receptor agonist (semaglutide) for type 2 diabetes
+    criteria:
+      - id: diagnosis
+        type: diagnosis
+        code_prefixes: [E11]
+        text: Documented diagnosis of type 2 diabetes mellitus (ICD-10 E11.*).
+      - id: hba1c
+        type: observation
+        loinc: "4548-4"
+        op: ">="
+        value: 7.0
+        within_days: 180
+        text: HbA1c of 7.0% or higher, measured within the last 180 days.
+      - id: metformin
+        type: any_of
+        text: Metformin for at least 90 days, or a documented metformin intolerance.
+        of:
+          - {type: medication_duration, ingredient: metformin, min_days: 90}
+          - {type: allergy, substance: metformin}
+
+  - id: MRI-LSPINE
+    title: MRI lumbar spine without contrast (CPT 72148)
+    bypass:
+      - id: red_flag
+        type: diagnosis
+        code_prefixes: [G83.4, C79.5, G95.2]
+        text: Red-flag findings (cauda equina syndrome, spinal metastasis, cord compression) allow imaging without conservative therapy.
+    criteria:
+      - id: diagnosis
+        type: diagnosis
+        code_prefixes: [M54.5]
+        text: Documented low back pain (ICD-10 M54.5*).
+      - id: conservative_therapy
+        type: any_of
+        text: Physical therapy spanning at least 6 weeks within the last 6 months, or an NSAID (naproxen) for at least 6 weeks.
+        of:
+          - {type: procedure_span, code: "97110", min_days: 42, within_days: 180}
+          - {type: medication_duration, ingredient: naproxen, min_days: 42}
+
+  - id: BIOLOGIC-RA
+    title: Adalimumab for rheumatoid arthritis
+    criteria:
+      - id: diagnosis
+        type: diagnosis
+        code_prefixes: [M05, M06]
+        text: Documented rheumatoid arthritis (ICD-10 M05.* or M06.*).
+      - id: methotrexate
+        type: medication_duration
+        ingredient: methotrexate
+        min_days: 84
+        text: Methotrexate for at least 12 weeks.
+      - id: tb_screen
+        type: observation
+        loinc: "71773-6"
+        op: "=="
+        value: 0
+        within_days: 365
+        text: Negative tuberculosis screening (IGRA) within the last 12 months.

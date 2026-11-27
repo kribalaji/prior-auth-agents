@@ -1,0 +1,111 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P003",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100003"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55003"
+          }
+        ],
+        "name": [
+          {
+            "family": "Iyer",
+            "given": [
+              "Suresh"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1960-01-22",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00003"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P003-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11.9",
+              "display": "Type 2 diabetes mellitus without complications"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P003"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "P003-obs-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 6.4,
+          "unit": "%"
+        },
+        "effectiveDateTime": "2026-09-17",
+        "subject": {
+          "reference": "Patient/P003"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "P003-med-3",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Metformin 1000 mg"
+        },
+        "effectivePeriod": {
+          "start": "2026-01-05",
+          "end": "2026-11-01"
+        },
+        "subject": {
+          "reference": "Patient/P003"
+        }
+      }
+    }
+  ]
+}

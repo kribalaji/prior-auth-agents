@@ -1,0 +1,14 @@
+# Expected outcomes for every synthetic patient (see data_gen/build_fhir.py).
+# These are the ground truth for tests/test_end_to_end.py and evals/run.py.
+- {patient: P001, service: GLP1-T2D,    outcome: approved,                  why: "T2D, HbA1c 8.1 recent, metformin 200 days"}
+- {patient: P002, service: GLP1-T2D,    outcome: pended_more_information,   why: "HbA1c only from 400 days ago"}
+- {patient: P003, service: GLP1-T2D,    outcome: routed_to_clinical_review, why: "HbA1c 6.4 below 7.0"}
+- {patient: P004, service: GLP1-T2D,    outcome: approved,                  why: "documented metformin intolerance satisfies any_of"}
+- {patient: P005, service: MRI-LSPINE,  outcome: approved,                  why: "9 weeks of physical therapy"}
+- {patient: P006, service: MRI-LSPINE,  outcome: routed_to_clinical_review, why: "only 2 weeks of physical therapy"}
+- {patient: P007, service: MRI-LSPINE,  outcome: approved,                  why: "cauda equina red flag bypasses therapy requirement"}
+- {patient: P008, service: MRI-LSPINE,  outcome: routed_to_clinical_review, why: "knee pain, no low back pain diagnosis"}
+- {patient: P009, service: BIOLOGIC-RA, outcome: approved,                  why: "methotrexate 120 days, negative IGRA 60 days ago"}
+- {patient: P010, service: BIOLOGIC-RA, outcome: pended_more_information,   why: "no TB screening on file"}
+- {patient: P011, service: BIOLOGIC-RA, outcome: routed_to_clinical_review, why: "methotrexate only 28 days"}
+- {patient: P012, service: MRI-LSPINE,  outcome: approved,                  why: "naproxen 90 days satisfies conservative therapy"}

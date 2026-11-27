@@ -1,0 +1,96 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P007",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100007"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55007"
+          }
+        ],
+        "name": [
+          {
+            "family": "Shankar",
+            "given": [
+              "Ravi"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1958-06-05",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00007"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P007-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M54.50",
+              "display": "Low back pain, unspecified"
+            }
+          ]
+        },
+        "onsetDateTime": "2026-10-22",
+        "subject": {
+          "reference": "Patient/P007"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P007-cond-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "G83.4",
+              "display": "Cauda equina syndrome"
+            }
+          ]
+        },
+        "onsetDateTime": "2026-10-29",
+        "subject": {
+          "reference": "Patient/P007"
+        }
+      }
+    }
+  ]
+}

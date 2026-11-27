@@ -1,0 +1,87 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P012",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100012"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55012"
+          }
+        ],
+        "name": [
+          {
+            "family": "Joshi",
+            "given": [
+              "Sneha"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1995-10-17",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00012"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P012-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M54.50",
+              "display": "Low back pain, unspecified"
+            }
+          ]
+        },
+        "onsetDateTime": "2026-04-15",
+        "subject": {
+          "reference": "Patient/P012"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "P012-med-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Naproxen 500 mg"
+        },
+        "effectivePeriod": {
+          "start": "2026-06-04",
+          "end": "2026-09-02"
+        },
+        "subject": {
+          "reference": "Patient/P012"
+        }
+      }
+    }
+  ]
+}

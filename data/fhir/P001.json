@@ -1,0 +1,111 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P001",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100001"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55001"
+          }
+        ],
+        "name": [
+          {
+            "family": "Vel",
+            "given": [
+              "Arun"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1968-04-12",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00001"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P001-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11.9",
+              "display": "Type 2 diabetes mellitus without complications"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "P001-obs-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 8.1,
+          "unit": "%"
+        },
+        "effectiveDateTime": "2026-10-02",
+        "subject": {
+          "reference": "Patient/P001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "P001-med-3",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Metformin 1000 mg"
+        },
+        "effectivePeriod": {
+          "start": "2026-04-15",
+          "end": "2026-11-01"
+        },
+        "subject": {
+          "reference": "Patient/P001"
+        }
+      }
+    }
+  ]
+}

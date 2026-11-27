@@ -1,0 +1,20 @@
+name: ci
+on:
+  push: {branches: [main]}
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: {python-version: "3.12"}
+      - run: uv sync --extra dev
+      - name: Lint
+        run: uv run ruff check src tests data_gen
+      - name: Fixtures are reproducible
+        run: uv run python data_gen/build_fhir.py && git diff --exit-code data/
+      - name: Tests (rules, PHI, MCP, A2A end to end)
+        run: uv run pytest -q
+      - name: Scenario demo (12/12 must match)
+        run: uv run priorauth demo

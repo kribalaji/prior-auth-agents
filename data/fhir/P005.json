@@ -1,0 +1,250 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P005",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100005"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55005"
+          }
+        ],
+        "name": [
+          {
+            "family": "Rao",
+            "given": [
+              "Karthik"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1985-11-11",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00005"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P005-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M54.50",
+              "display": "Low back pain, unspecified"
+            }
+          ]
+        },
+        "onsetDateTime": "2026-07-04",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-07-24",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-07-31",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-08-07",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-08-14",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-08-21",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-7",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-08-28",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-8",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-09-04",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-9",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-09-11",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P005-proc-10",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-09-18",
+        "subject": {
+          "reference": "Patient/P005"
+        }
+      }
+    }
+  ]
+}

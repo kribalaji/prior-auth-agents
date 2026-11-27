@@ -1,0 +1,130 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P006",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100006"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55006"
+          }
+        ],
+        "name": [
+          {
+            "family": "Menon",
+            "given": [
+              "Divya"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1990-02-14",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00006"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P006-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M54.50",
+              "display": "Low back pain, unspecified"
+            }
+          ]
+        },
+        "onsetDateTime": "2026-09-22",
+        "subject": {
+          "reference": "Patient/P006"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P006-proc-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-10-12",
+        "subject": {
+          "reference": "Patient/P006"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P006-proc-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-10-19",
+        "subject": {
+          "reference": "Patient/P006"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "P006-proc-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "97110",
+              "display": "Therapeutic exercise (physical therapy)"
+            }
+          ]
+        },
+        "performedDateTime": "2026-10-26",
+        "subject": {
+          "reference": "Patient/P006"
+        }
+      }
+    }
+  ]
+}

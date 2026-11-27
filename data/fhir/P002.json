@@ -1,0 +1,111 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P002",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100002"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55002"
+          }
+        ],
+        "name": [
+          {
+            "family": "Raj",
+            "given": [
+              "Meena"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1975-09-03",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00002"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P002-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11.9",
+              "display": "Type 2 diabetes mellitus without complications"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P002"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "P002-obs-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 8.4,
+          "unit": "%"
+        },
+        "effectiveDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P002"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "P002-med-3",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Metformin 500 mg"
+        },
+        "effectivePeriod": {
+          "start": "2026-03-26",
+          "end": "2026-11-01"
+        },
+        "subject": {
+          "reference": "Patient/P002"
+        }
+      }
+    }
+  ]
+}

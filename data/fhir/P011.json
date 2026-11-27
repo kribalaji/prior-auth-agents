@@ -1,0 +1,111 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "P011",
+        "identifier": [
+          {
+            "system": "urn:larkspur:mrn",
+            "value": "MRN-100011"
+          },
+          {
+            "system": "urn:larkspur:member",
+            "value": "LHP-55011"
+          }
+        ],
+        "name": [
+          {
+            "family": "Pillai",
+            "given": [
+              "Vijay"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1973-05-08",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-90000-00011"
+          }
+        ],
+        "address": [
+          {
+            "city": "Chennai",
+            "country": "IN"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "P011-cond-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M05.79",
+              "display": "Rheumatoid arthritis with rheumatoid factor, multiple sites"
+            }
+          ]
+        },
+        "onsetDateTime": "2025-09-27",
+        "subject": {
+          "reference": "Patient/P011"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "P011-med-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Methotrexate 10 mg weekly"
+        },
+        "effectivePeriod": {
+          "start": "2026-10-04",
+          "end": "2026-11-01"
+        },
+        "subject": {
+          "reference": "Patient/P011"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "P011-obs-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "71773-6",
+              "display": "Mycobacterium tuberculosis IGRA"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 0,
+          "unit": "{result}"
+        },
+        "effectiveDateTime": "2026-10-02",
+        "subject": {
+          "reference": "Patient/P011"
+        }
+      }
+    }
+  ]
+}
